@@ -1,0 +1,189 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "b9f3e4d0",
+   "metadata": {
+    "_cell_guid": "b1076dfc-b9ad-4769-8c92-a6c4dae69d19",
+    "_uuid": "8f2839f25d086af736a60e9eeb907d3b93b6e0e5",
+    "execution": {
+     "iopub.execute_input": "2026-03-28T12:02:51.687774Z",
+     "iopub.status.busy": "2026-03-28T12:02:51.687495Z",
+     "iopub.status.idle": "2026-03-28T12:02:53.001925Z",
+     "shell.execute_reply": "2026-03-28T12:02:53.001027Z"
+    },
+    "papermill": {
+     "duration": 1.318896,
+     "end_time": "2026-03-28T12:02:53.003514+00:00",
+     "exception": false,
+     "start_time": "2026-03-28T12:02:51.684618+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "/kaggle/input/datasets/nudratabbas/global-ads-performance-google-meta-tiktok/global_ads_performance_dataset.csv\n"
+     ]
+    }
+   ],
+   "source": [
+    "# This Python 3 environment comes with many helpful analytics libraries installed\n",
+    "# It is defined by the kaggle/python Docker image: https://github.com/kaggle/docker-python\n",
+    "# For example, here's several helpful packages to load\n",
+    "\n",
+    "import numpy as np # linear algebra\n",
+    "import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)\n",
+    "\n",
+    "# Input data files are available in the read-only \"../input/\" directory\n",
+    "# For example, running this (by clicking run or pressing Shift+Enter) will list all files under the input directory\n",
+    "\n",
+    "import os\n",
+    "for dirname, _, filenames in os.walk('/kaggle/input'):\n",
+    "    for filename in filenames:\n",
+    "        print(os.path.join(dirname, filename))\n",
+    "\n",
+    "# You can write up to 20GB to the current directory (/kaggle/working/) that gets preserved as output when you create a version using \"Save & Run All\" \n",
+    "# You can also write temporary files to /kaggle/temp/, but they won't be saved outside of the current session"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "475f4aa5",
+   "metadata": {
+    "papermill": {
+     "duration": 0.000948,
+     "end_time": "2026-03-28T12:02:53.005735+00:00",
+     "exception": false,
+     "start_time": "2026-03-28T12:02:53.004787+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# Digital Advertising Spend & Campaign Revenue: A Regression Analysis\n",
+    "\n",
+    "## Author\n",
+    "Andrej Arsenijevic, Dubai UAE, April 2026\n",
+    "\n",
+    "## Problem Statement\n",
+    "Does an increase in digital ad spend across platforms, industries, and global \n",
+    "markets drive measurable revenue growth for brands?\n",
+    "\n",
+    "## Context\n",
+    "Advertising investment decisions impact billions in brand budgets worldwide.\n",
+    "Understanding which digital channels, campaign types, and markets deliver the \n",
+    "strongest revenue returns enables a smarter, evidence-backed marketing strategy.\n",
+    "This analysis uses real campaign-level data spanning 7 countries and 3 major \n",
+    "platforms to quantify the relationship between spend inputs and revenue outcomes.\n",
+    "\n",
+    "## Target Variable (Y)\n",
+    "**Campaign Revenue (USD)** — a continuous numerical outcome ranging from $142.69 \n",
+    "to $295,028, suitable for regression modeling.\n",
+    "\n",
+    "## Features / Independent Variables (X)\n",
+    "- Ad spend (USD) — primary investment input\n",
+    "- Clicks — direct engagement signal\n",
+    "- Impressions — reach and exposure signal\n",
+    "- Conversions — campaign response count\n",
+    "- CTR (click-through rate) — spend efficiency signal\n",
+    "- CPA (cost per acquisition) — cost efficiency control\n",
+    "- Date — time control for seasonality (full year 2024)\n",
+    "- Platform (categorical: Google Ads, Meta Ads, TikTok Ads)\n",
+    "- Campaign type (categorical: Search, Display, Video, Shopping)\n",
+    "- Industry (categorical: Fintech, SaaS, Healthcare, EdTech, E-commerce)\n",
+    "- Country (categorical control: USA, UK, UAE, Germany, Canada, India, Australia)\n",
+    "\n",
+    "## Hypothesis\n",
+    "**H₀:** Ad spend, clicks, and conversions have no statistically significant \n",
+    "effect on campaign revenue across platforms, industries, and markets.\n",
+    "\n",
+    "**H₁:** Conversions and clicks are the strongest positive predictors of revenue, \n",
+    "with ad spend showing a significant but smaller direct effect, and platform type \n",
+    "and industry moderating the relationship — after controlling for country, \n",
+    "campaign type, and seasonality.\n",
+    "\n",
+    "## Dataset\n",
+    "- **Source:** Global Ads Performance Dataset — Kaggle\n",
+    "- **License:** Apache 2.0 — permitted for academic and student use\n",
+    "- **Scope:** 7 countries · 3 platforms · 5 industries · 4 campaign types\n",
+    "- **Period:** January 2024 — December 2024\n",
+    "- **Rows / Features:** 1,800 rows · 14 columns · 0 missing values\n",
+    "\n",
+    "## Stakeholders\n",
+    "Marketing teams, brand strategists, and academic researchers studying the \n",
+    "revenue impact of digital advertising spend across global markets and platforms."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "fd8da19e",
+   "metadata": {
+    "papermill": {
+     "duration": 0.000854,
+     "end_time": "2026-03-28T12:02:53.007721+00:00",
+     "exception": false,
+     "start_time": "2026-03-28T12:02:53.006867+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kaggle": {
+   "accelerator": "none",
+   "dataSources": [
+    {
+     "databundleVersionId": 15340768,
+     "datasetId": 9269841,
+     "sourceId": 14513710,
+     "sourceType": "datasetVersion"
+    }
+   ],
+   "dockerImageVersionId": 31328,
+   "isGpuEnabled": false,
+   "isInternetEnabled": true,
+   "language": "python",
+   "sourceType": "notebook"
+  },
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.12"
+  },
+  "papermill": {
+   "default_parameters": {},
+   "duration": 4.96605,
+   "end_time": "2026-03-28T12:02:53.425546+00:00",
+   "environment_variables": {},
+   "exception": null,
+   "input_path": "__notebook__.ipynb",
+   "output_path": "__notebook__.ipynb",
+   "parameters": {},
+   "start_time": "2026-03-28T12:02:48.459496+00:00",
+   "version": "2.7.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
