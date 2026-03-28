@@ -141,7 +141,7 @@ project/
 ├── data/
 │   └── global_ads_performance_dataset.csv
 ├── notebooks/
-│   └── regression_analysis.ipynb
+│   └── digital-ad-spend-revenue-regression-analysis.ipynb
 ├── references/
-│   └── README.md  ← this file
+│   └── experiment_log.md
 ```
