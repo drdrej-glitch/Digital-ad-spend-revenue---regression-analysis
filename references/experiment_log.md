@@ -84,7 +84,11 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
 
   Missing value verification complete. All three checks passed —
   0 NaN values, 0 empty strings, 0 exact duplicates confirmed
-  on the training set. No imputation required. 
+  on the training set. No imputation required.
+
+  Feature summary table complete. All 13 features documented
+  with type, missing values, skewness, and OLS decision.
+  Saved as feature_summary_table.csv.
 
 ---
 
