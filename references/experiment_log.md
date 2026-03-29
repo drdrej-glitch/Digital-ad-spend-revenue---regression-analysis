@@ -25,6 +25,10 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
   33 in ad_spend and conversions, 26 in clicks, 0 in impressions.
   Decision: retain all outliers as they represent legitimate high-budget 
   campaigns, not data errors.
+  Row-level check on top 5 revenue campaigns confirmed outliers are legitimate —
+  all show consistent high spend, clicks, and conversions. TikTok Ads appears 
+  in 4 of top 5 highest revenue campaigns — to be investigated in EDA.
+  
 
 ---
 
