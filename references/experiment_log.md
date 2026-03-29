@@ -18,16 +18,24 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
   platform, campaign_type, industry, country
 - **Parameters:** Default OLS (no regularization)
 - **Metrics:** R²: — · RMSE: — · MAE: —
-- **Notes:** Baseline run. Fill metrics after running OLS Regression cell.
+- **Notes:** * Notes: Baseline run. Fill metrics after running OLS Regression cell.
+  
   Data cleaning complete — 0 missing values, 0 duplicates confirmed.
   Date parsed to datetime, month and quarter extracted (now 16 columns).
-  Outlier check run on 6 key columns — 47 in ROAS, 37 in revenue, 
+  Outlier check run on 6 key columns — 47 in ROAS, 37 in revenue,
   33 in ad_spend and conversions, 26 in clicks, 0 in impressions.
-  Decision: retain all outliers as they represent legitimate high-budget 
+  Decision: retain all outliers as they represent legitimate high-budget
   campaigns, not data errors.
-  Row-level check on top 5 revenue campaigns confirmed outliers are legitimate —
-  all show consistent high spend, clicks, and conversions. TikTok Ads appears 
-  in 4 of top 5 highest revenue campaigns — to be investigated in EDA.
+  
+  Row-level check on top 5 revenue campaigns confirmed outliers are
+  legitimate — all show consistent high spend, clicks, and conversions.
+  TikTok Ads appears in 4 of top 5 highest revenue campaigns.
+
+  Data inspection complete. Key findings: TikTok Ads generates 2.4x
+  more revenue than Meta Ads despite 37% fewer campaigns. Q4 shows
+  strongest revenue ($33,134 avg). Search campaigns outperform all
+  other types. Australia leads by country unexpectedly. SaaS is
+  top industry. All findings to be confirmed by OLS regression.
   
 
 ---
