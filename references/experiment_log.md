@@ -90,6 +90,17 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
   with type, missing values, skewness, and OLS decision.
   Saved as feature_summary_table.csv.
 
+  All pre-modeling steps complete:
+  - Data cleaning ✓
+  - Train/test split ✓  
+  - Statistical preprocessing ✓
+  - EDA on training set ✓
+  - Feature type identification ✓
+  - Feature distributions visualized ✓
+  - Missing value check ✓
+  - Feature summary table ✓
+  Ready to build OLS baseline regression model.
+
 ---
 
 ### Experiment 2
