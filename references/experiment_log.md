@@ -51,6 +51,12 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
   no leakage. All 23 features were retained for OLS. Fitted scaler saved 
   to fitted_preprocessors.pkl.
   
+  EDA complete on training set only (1,440 rows — test set locked).
+  Key training set findings to be confirmed by OLS:
+  Revenue distribution, correlations, group differences by platform/
+  industry/country/campaign type, and seasonal Q4 pattern examined.
+  5 plots saved as PNG files.
+  
 
 ---
 
