@@ -73,6 +73,14 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
   - conversions and clicks flagged MONITOR for VIF check
   - All features compatible with OLS regression
   - No features engineered or removed at this stage
+ 
+  Feature distribution visualization is complete on the training set only.
+  4 plots saved. Key findings:
+  - conversions most skewed (1.83), ad_spend (1.63), clicks (1.11)
+  - Country dummies show ~14% each — expected for 7-category variable
+  - All features confirmed usable for OLS as-is
+  - Google Ads has 37% more training campaigns than TikTok
+  - No zero variance or extreme imbalance found
 
 ---
 
