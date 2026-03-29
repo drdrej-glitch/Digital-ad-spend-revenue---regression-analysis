@@ -82,6 +82,10 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
   - Google Ads has 37% more training campaigns than TikTok
   - No zero variance or extreme imbalance found
 
+  Missing value verification complete. All three checks passed —
+  0 NaN values, 0 empty strings, 0 exact duplicates confirmed
+  on the training set. No imputation required. 
+
 ---
 
 ### Experiment 2
