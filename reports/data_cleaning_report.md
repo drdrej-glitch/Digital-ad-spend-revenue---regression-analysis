@@ -40,3 +40,9 @@ Period: January 2024 — December 2024
 - ROAS dropped (derived from revenue)
 - CPA dropped (derived from conversions and ad_spend)
 - date dropped (replaced by month and quarter)
+
+## Note on outlier detection timing
+Outlier inspection was performed on the full dataset prior to splitting 
+for exploratory purposes only. No rows were removed or transformed based 
+on these statistics. In a production pipeline this check would be 
+performed on training data only.
