@@ -11,14 +11,20 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
 ### Experiment 1
 - **Date:** March 2026
 - **Tag:** `baseline`
-- **Dataset:** global_ads_performance_dataset.csv (1,800 rows · 14 columns)
+- **Dataset:** global_ads_performance_dataset.csv (1,800 rows · 16 columns after feature extraction)
 - **Algorithm:** OLS Linear Regression
 - **Target variable:** revenue (USD)
 - **Features used:** ad_spend, clicks, impressions, conversions, CTR, CPA,
   platform, campaign_type, industry, country
 - **Parameters:** Default OLS (no regularization)
 - **Metrics:** R²: — · RMSE: — · MAE: —
-- **Notes:** Baseline run. Fill metrics after running Cell 8.
+- **Notes:** Baseline run. Fill metrics after running OLS Regression cell.
+  Data cleaning complete — 0 missing values, 0 duplicates confirmed.
+  Date parsed to datetime, month and quarter extracted (now 16 columns).
+  Outlier check run on 6 key columns — 47 in ROAS, 37 in revenue, 
+  33 in ad_spend and conversions, 26 in clicks, 0 in impressions.
+  Decision: retain all outliers as they represent legitimate high-budget 
+  campaigns, not data errors.
 
 ---
 
