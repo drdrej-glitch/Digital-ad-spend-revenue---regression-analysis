@@ -56,7 +56,12 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
   Revenue distribution, correlations, group differences by platform/
   industry/country/campaign type, and seasonal Q4 pattern examined.
   5 plots saved as PNG files.
-  
+
+  Feature-to-target connection analysis complete. Observations only —
+  no features engineered or removed. Key notes: conversions and clicks
+  flagged as MONITOR for VIF multicollinearity check. All features
+  confirmed compatible with OLS. Zero missing values. ad_spend and
+  conversions may be skewed — to check in diagnostics. Ready for OLS.
 
 ---
 
