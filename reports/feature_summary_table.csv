@@ -1,0 +1,16 @@
+Feature,Type,Missing,Unique Values,Category,Description,Skewness,OLS Decision
+date,datetime64[ns],0.0,358,Datetime,Campaign date — replaced by month and quarter,N/A,DROP — replaced by month and quarter
+platform,object,0.0,3,Categorical,Ad platform: Google Ads / Meta Ads / TikTok Ads,N/A,"INCLUDE — dummy encoded, strongest categorical signal"
+campaign_type,object,0.0,4,Categorical,Campaign format: Search / Display / Video / Shopping,N/A,"INCLUDE — dummy encoded, weak but valid control"
+industry,object,0.0,5,Categorical,Advertiser industry: SaaS / Healthcare / EdTech / Fintech / E-commerce,N/A,"INCLUDE — dummy encoded, moderate signal"
+country,object,0.0,7,Categorical,"Campaign country: 7 markets including UAE, USA, UK",N/A,"INCLUDE — dummy encoded, geographic control"
+impressions,int64,0.0,1433,Numerical,Total ad views — reach signal,0.01,"INCLUDE — low skew, moderate correlation"
+clicks,int64,0.0,1314,Numerical,Total clicks — engagement signal,1.11,INCLUDE — monitor multicollinearity with conversions
+CTR,float64,0.0,585,Numerical,Click-through rate (clicks/impressions),0.61,"INCLUDE — mild skew, acceptable"
+CPC,float64,0.0,315,Numerical,Cost per click in USD,0.63,"INCLUDE — weak predictor, keep for completeness"
+ad_spend,float64,0.0,1440,Numerical,Total campaign spend in USD — primary predictor,1.63,INCLUDE — core research variable
+conversions,int64,0.0,473,Numerical,Customer conversions — strongest predictor (corr 0.83),1.83,"INCLUDE — strongest predictor, monitor VIF"
+CPA,float64,0.0,1336,,,N/A,
+ROAS,float64,0.0,876,,,N/A,
+month,int32,0.0,12,Datetime,Month extracted from date (1-12) — dropped before OLS,N/A,DROP — 0.97 correlation with quarter
+quarter,int32,0.0,4,Datetime,Quarter extracted from date (1-4) — seasonal control,N/A,INCLUDE — seasonal control
