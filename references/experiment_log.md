@@ -63,6 +63,17 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
   confirmed compatible with OLS. Zero missing values. ad_spend and
   conversions may be skewed — to check in diagnostics. Ready for OLS.
 
+  Feature-to-target connection analysis complete. Training set only.
+  Key observations:
+  - HIGH relevance: conversions, clicks, ad_spend, platform
+  - MEDIUM relevance: impressions, CTR, industry, country
+  - LOW relevance: CPC, quarter, campaign_type
+  - Skewed features: clicks (1.11), ad_spend (1.63), conversions (1.83)
+  - Zero missing values confirmed across all features
+  - conversions and clicks flagged MONITOR for VIF check
+  - All features compatible with OLS regression
+  - No features engineered or removed at this stage
+
 ---
 
 ### Experiment 2
