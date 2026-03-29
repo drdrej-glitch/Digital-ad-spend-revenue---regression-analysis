@@ -19,14 +19,13 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
 - **Parameters:** Default OLS (no regularization)
 - **Metrics:** R²: — · RMSE: — · MAE: —
 - **Notes:** * Notes: Baseline run. Fill metrics after running OLS Regression cell.
-  
+
   Data cleaning complete — 0 missing values, 0 duplicates confirmed.
   Date parsed to datetime, month and quarter extracted (now 16 columns).
   Outlier check run on 6 key columns — 47 in ROAS, 37 in revenue,
   33 in ad_spend and conversions, 26 in clicks, 0 in impressions.
   Decision: retain all outliers as they represent legitimate high-budget
   campaigns, not data errors.
-  
   Row-level check on top 5 revenue campaigns confirmed outliers are
   legitimate — all show consistent high spend, clicks, and conversions.
   TikTok Ads appears in 4 of top 5 highest revenue campaigns.
@@ -37,12 +36,13 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
   other types. Australia leads by country unexpectedly. SaaS is
   top industry. All findings to be confirmed by OLS regression.
 
-  Train/test split complete. Strategy: random split with stratification 
+  Train/test split complete. Strategy: random split with stratification
   on 5 revenue quantile bins. 1,440 training rows / 360 test rows (80/20).
-  ROAS, CPA, and date dropped to prevent leakage. Categorical columns 
-  dummy encoded — shape expanded from 13 to 24 columns. Perfect stratification 
-  confirmed — all 5 bins equally represented (288 train / 72 test per bin).
-  Train/test CSV files saved to Kaggle output.
+  ROAS, CPA, and date dropped to prevent leakage. Categorical columns
+  dummy encoded — shape expanded from 13 to 24 columns. Perfect
+  stratification confirmed — all 5 bins equally represented
+  (288 train / 72 test per bin). Train/test CSV files and metadata
+  JSON saved to Kaggle output.
   
 
 ---
