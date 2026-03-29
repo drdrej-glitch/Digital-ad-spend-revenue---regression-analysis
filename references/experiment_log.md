@@ -36,6 +36,13 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
   strongest revenue ($33,134 avg). Search campaigns outperform all
   other types. Australia leads by country unexpectedly. SaaS is
   top industry. All findings to be confirmed by OLS regression.
+
+  Train/test split complete. Strategy: random split with stratification 
+  on 5 revenue quantile bins. 1,440 training rows / 360 test rows (80/20).
+  ROAS, CPA, and date dropped to prevent leakage. Categorical columns 
+  dummy encoded — shape expanded from 13 to 24 columns. Perfect stratification 
+  confirmed — all 5 bins equally represented (288 train / 72 test per bin).
+  Train/test CSV files saved to Kaggle output.
   
 
 ---
