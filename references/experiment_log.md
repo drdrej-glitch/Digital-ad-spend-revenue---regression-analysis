@@ -43,6 +43,13 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
   stratification confirmed — all 5 bins equally represented
   (288 train / 72 test per bin). Train/test CSV files and metadata
   JSON saved to Kaggle output.
+
+  Statistical preprocessing complete. StandardScaler fitted on 
+  X_train (1,440 rows) only — applied to X_test using training 
+  parameters. Training mean ~0.0 and std ~1.0 confirmed. Test set 
+  slight deviation (mean: 0.009, std: 1.009) is expected and confirms 
+  no leakage. All 23 features were retained for OLS. Fitted scaler saved 
+  to fitted_preprocessors.pkl.
   
 
 ---
