@@ -107,6 +107,14 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
   to -0.517 — near normal. Decision confirmed: use log-transformed
   revenue for OLS. Zero negative values — log transform safe to apply.
 
+  Numerical feature profiling is complete on the training set.
+  Top 5 features profiled. Skewed features: conversions (1.83),
+  ad_spend (1.63), clicks (1.11). Normal features: impressions (0.01),
+  CTR (0.61), CPC (0.63). Zero variance: none. Scale mismatches:
+  resolved by StandardScaler. Log transforms flagged for Experiment 2.
+  Baseline OLS will use features as-is.
+
+
 
 ---
 
