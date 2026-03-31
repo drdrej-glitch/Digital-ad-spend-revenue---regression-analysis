@@ -136,6 +136,23 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
   CPC and quarter kept as controls despite weak correlation.
   Bar chart saved: feature_target_correlations.png
 
+  Categorical feature analysis complete on training set.
+  All 4 features have adequate sample sizes — no rare categories.
+
+  Revenue gaps confirmed:
+  - platform: $26,129 — most informative (TikTok $45,082 vs Meta $18,953)
+  - country: $10,054 — Australia leads, USA last
+  - industry: $6,368 — SaaS leads, Fintech last  
+  - campaign_type: $3,171 — least informative, Search leads
+
+  Key observations:
+  - TikTok highest revenue with fewest campaigns (25% of data)
+  - Mean >> median within every category confirms skew persists
+  across all groups — reinforces log transform decision
+  - All encoding decisions validated — one-hot correct for all 4
+
+  4 plots saved to reports/figures/.
+
 
 
 ---
