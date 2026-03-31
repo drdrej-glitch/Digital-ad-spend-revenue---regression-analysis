@@ -187,6 +187,15 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
   - Two-experiment plan confirmed
   - Expected R²: 0.70-0.85
   - Status: READY for OLS regression
+ 
+  Feature summary table updated with full EDA findings.
+  15 features documented across 12 columns, including
+  missing strategy, transform, VIF, correlation, priority
+  and OLS decision for both experiments.
+  HIGH priority: clicks, ad_spend, conversions, platform
+  DROPPED: month (multicollinearity), ROAS/CPA (leakage), date
+  Saved: feature_summary_table_updated.csv
+  Ready for OLS Experiment 1.
 
 ---
 
