@@ -153,7 +153,10 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
 
   4 plots saved to reports/figures/.
 
-
+  Missing data map complete. Heatmap shows a completely solid pattern —
+  zero missing values confirmed visually across all 23 features and
+  1,440 training rows. No imputation required. Severity: none.
+  Plot saved: missing_data_map.png
 
 ---
 
