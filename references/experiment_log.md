@@ -101,6 +101,13 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
   - Feature summary table ✓
   Ready to build OLS baseline regression model.
 
+  Target variable deep dive complete. Revenue confirmed right-skewed
+  (skewness 2.556, kurtosis 9.391). Mean $30,180 vs median $18,763
+  — $11,417 gap confirms skew. Log transformation reduces skewness
+  to -0.517 — near normal. Decision confirmed: use log-transformed
+  revenue for OLS. Zero negative values — log transform safe to apply.
+
+
 ---
 
 ### Experiment 2
