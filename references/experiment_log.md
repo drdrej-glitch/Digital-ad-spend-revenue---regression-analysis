@@ -114,6 +114,28 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
   resolved by StandardScaler. Log transforms flagged for Experiment 2.
   Baseline OLS will use features as-is.
 
+  Numerical feature correlation analysis complete (training set only).
+  Results by strength category:
+
+  VERY STRONG (|r| > 0.7):
+  - conversions +0.828 — priority predictor
+
+  STRONG (0.5 < |r| < 0.7):
+  - clicks +0.672 — priority predictor
+
+  MODERATE (0.3 < |r| < 0.5):
+  - ad_spend +0.487 — core research variable
+  - impressions +0.480 — reach signal
+  - CTR +0.416 — efficiency signal
+
+  VERY WEAK (|r| < 0.1):
+  - quarter +0.033 — kept as seasonal control
+  - CPC -0.012 — kept for completeness
+
+  Strategic decision: all features retained for baseline OLS.
+  CPC and quarter kept as controls despite weak correlation.
+  Bar chart saved: feature_target_correlations.png
+
 
 
 ---
