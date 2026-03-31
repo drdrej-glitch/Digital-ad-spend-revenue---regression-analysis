@@ -158,8 +158,7 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
   1,440 training rows. No imputation required. Severity: none.
   Plot saved: missing_data_map.png
 
-  ### Update experiment log
-  ```
+
   IQR outlier detection complete on training set.
   IQR catches more than 3std method as expected for skewed data.
   conversions flagged HIGH at 5.2% — addressed:
@@ -168,6 +167,26 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
   All other features below 5% threshold.
   Final decision: retain all outliers across all features.
   Plot saved: iqr_outlier_boxplots.png
+
+  VIF analysis revealed joint multicollinearity across numerical features:
+  clicks (39.06), CTR (11.78), ad_spend (11.49), 
+  impressions (10.93), CPC (10.50) all exceed VIF > 10 threshold.
+  Root cause: clicks are correlated with multiple features simultaneously.
+  conversions VIF = 6.46 — only feature below threshold.
+  Decision: 
+  - Experiment 1: run OLS with all features — note VIF as a limitation
+  - Experiment 2: run OLS with low VIF features only — compare results
+  This approach demonstrates an understanding of multicollinearity
+  and its consequences for regression interpretation.
+
+  EDA Summary Dashboard is complete. Key findings synthesized:
+  - Dataset clean (0 missing, 0 duplicates)
+  - Strong predictors: conversions (0.83), clicks (0.67)
+  - Platform most informative categorical ($26,129 gap)
+  - Main risk: joint multicollinearity (VIF > 10 for 5 features)
+  - Two-experiment plan confirmed
+  - Expected R²: 0.70-0.85
+  - Status: READY for OLS regression
 
 ---
 
