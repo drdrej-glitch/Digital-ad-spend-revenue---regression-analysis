@@ -158,6 +158,17 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
   1,440 training rows. No imputation required. Severity: none.
   Plot saved: missing_data_map.png
 
+  ### Update experiment log
+  ```
+  IQR outlier detection complete on training set.
+  IQR catches more than 3std method as expected for skewed data.
+  conversions flagged HIGH at 5.2% — addressed:
+  strongest predictor (corr 0.83), removing would lose most
+  informative campaigns, log transform mitigates impact.
+  All other features below 5% threshold.
+  Final decision: retain all outliers across all features.
+  Plot saved: iqr_outlier_boxplots.png
+
 ---
 
 ### Experiment 2
