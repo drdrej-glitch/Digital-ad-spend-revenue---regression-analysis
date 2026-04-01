@@ -197,6 +197,24 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
   Saved: feature_summary_table_updated.csv
   Ready for OLS Experiment 1.
 
+  Binning demonstration complete on training set (educational only).
+  Key finding — dataset does not require binning because:
+  1. Equal-width binning destroys data — 71% of ad_spend 
+   campaigns fall in a single "Very Low" bin, losing all variation
+  2. Strongest predictor (conversions corr 0.83) loses power 
+   when binned — 473 unique values reduced to 4 tiers
+  3. StandardScaler already resolved scale differences between features
+  4. Log transformation on revenue already handles non-linearity
+  5. OLS works directly with continuous values — binning loses information
+
+  Conversion-tier revenue confirmed a strong pattern:
+  Top performer $108,322 vs Low performer $4,401 — but this
+  information already captured by the continuous conversions column.
+
+  Decision: binning NOT applied to OLS model.
+  Useful for: stakeholder reports and Experiment 2 feature engineering.
+  Plot saved: binning_strategies.png
+
 ---
 
 ### Experiment 2
