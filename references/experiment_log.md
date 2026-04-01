@@ -248,12 +248,16 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
   Drop: campaign_type dummies, most country dummies, CPC
   Plot saved: feature_importance_rf.png
 
-  Text Feature Engineering assesed
+  Text Feature Engineering assessed
   Not applicable — dataset contains no text or free-form
   description columns. All categorical features are short
   labels already handled by one-hot encoding.
 
-  
+  Feature engineering pipeline complete. All preprocessing
+  steps consolidated into sklearn ColumnTransformer pipeline.
+  13 feature engineering steps documented in the feature log.
+  Pipeline saved to feature_engineering_pipeline.pkl for
+  reproducibility.
 
 ---
 
