@@ -1,0 +1,16 @@
+Feature,Category,Missing_Pct,Missing_Strategy,Skewness,Transform,Encoding,VIF,Corr_Revenue,Priority,OLS_Decision,Description
+impressions,Numerical,0.0,None,0.01,None,None,10.93,0.48,MEDIUM,INCLUDE — Experiment 1,Total ad views — reach signal
+clicks,Numerical,0.0,None,1.11,Scale,None,39.06,0.672,HIGH,INCLUDE — Experiment 1 | DROP — Experiment 2 (VIF 39),Total clicks — engagement signal
+CTR,Numerical,0.0,None,0.61,None,None,11.78,0.416,MEDIUM,INCLUDE — Experiment 1 | DROP — Experiment 2 (VIF 12),Click-through rate (clicks/impressions)
+CPC,Numerical,0.0,None,0.63,None,None,10.5,-0.012,LOW,INCLUDE — Experiment 1 | DROP — Experiment 2 (VIF 11),Cost per click in USD
+ad_spend,Numerical,0.0,None,1.63,Scale,None,11.49,0.487,HIGH,INCLUDE — Experiment 1 | DROP — Experiment 2 (VIF 11),Total campaign spend in USD — primary predictor
+conversions,Numerical,0.0,None,1.83,Scale,None,6.46,0.828,HIGH,INCLUDE — both experiments (VIF 6.46),Customer conversions — strongest predictor
+quarter,Datetime,0.0,None,0.03,None,None,N/A,0.033,LOW,INCLUDE — both experiments (seasonal control),Quarter extracted from date (1-4)
+platform,Categorical,0.0,None,N/A,Encoding,One-Hot (drop_first),N/A,N/A,HIGH,INCLUDE — both experiments (dummy encoded),Ad platform: Google / Meta / TikTok
+campaign_type,Categorical,0.0,None,N/A,Encoding,One-Hot (drop_first),N/A,N/A,LOW,INCLUDE — both experiments (dummy encoded),Campaign format: Search / Display / Video / Shopping
+industry,Categorical,0.0,None,N/A,Encoding,One-Hot (drop_first),N/A,N/A,MEDIUM,INCLUDE — both experiments (dummy encoded),Advertiser industry vertical
+country,Categorical,0.0,None,N/A,Encoding,One-Hot (drop_first),N/A,N/A,MEDIUM,INCLUDE — both experiments (dummy encoded),Campaign country — 7 markets
+month,Datetime,0.0,None,N/A,Dropped,Dropped,Dropped,Dropped,DROPPED,DROPPED — multicollinearity with quarter,Month extracted from date — dropped
+ROAS,Numerical,0.0,None,N/A,Dropped,Dropped,Dropped,Dropped,DROPPED,DROPPED — data leakage (derived from revenue),Return on ad spend — dropped (leakage)
+CPA,Numerical,0.0,None,N/A,Dropped,Dropped,Dropped,Dropped,DROPPED,DROPPED — data leakage (derived from ad_spend),Cost per acquisition — dropped (leakage)
+date,Datetime,0.0,None,N/A,Dropped,Dropped,Dropped,Dropped,DROPPED,DROPPED — replaced by month and quarter,Raw campaign date — dropped
