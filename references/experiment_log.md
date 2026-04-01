@@ -228,6 +228,28 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
   Finding: no interaction engineering needed for this dataset.
   Plot saved: interaction_features.png
 
+  Automated feature selection complete on training set.
+  3 methods applied: SelectKBest, Random Forest, RFE.
+
+  Features confirmed by ALL 3 methods:
+  conversions, clicks, ad_spend, impressions, CTR, industry_Fintech
+
+  Key finding: conversions accounts for 75% of RF importance —
+  model will primarily predict revenue through conversions.
+  
+  Manual EDA decisions validated:
+  - conversions 3/3, clicks 3/3, ad_spend 3/3 — all confirmed
+  - platform_TikTok 2/3 — largely confirmed
+  - platform_Meta 1/3 — weaker than expected
+
+  Experiment 2 feature set identified:
+  Keep: conversions, clicks, ad_spend, impressions, CTR,
+      platform_TikTok, industry_Fintech, quarter
+  Drop: campaign_type dummies, most country dummies, CPC
+  Plot saved: feature_importance_rf.png
+
+  
+
 ---
 
 ### Experiment 2
