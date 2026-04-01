@@ -259,6 +259,22 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
   Pipeline saved to feature_engineering_pipeline.pkl for
   reproducibility.
 
+  Experiment 1 OLS complete — Baseline model.
+  Training R²=0.638 | Test R²=0.597 | Gap=0.041 (acceptable)
+  RMSE=$37,548 | MAE=$17,752 | F-stat p≈0
+
+  H₀ rejected — model statistically significant.
+  H₁ partially confirmed:
+  - conversions confirmed strongest predictor (+0.718, p<0.001)
+  - ad_spend NOT significant (p=0.342) — key finding
+  - clicks negative (-0.703) — multicollinearity artefact (VIF=39)
+  - Meta Ads significant negative vs Google baseline
+  - TikTok NOT significant after controlling for conversions
+
+  Raw R² negative — expected consequence of log transform
+  back-transformation. Log-scale R²=0.597 is the correct metric.
+  Proceeding to Experiment 2 — drop high VIF features.
+
 ---
 
 ### Experiment 2
