@@ -215,6 +215,19 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
   Useful for: stakeholder reports and Experiment 2 feature engineering.
   Plot saved: binning_strategies.png
 
+  Interaction feature analysis complete on training set.
+  3 interactions created and evaluated:
+
+  clicks × conversions:  r=0.765 — weaker than conversions (0.828)
+  spend_efficiency:      r=0.253 — too weak, efficiency ≠ total revenue
+  effective_reach:       r=0.672 — mathematically identical to clicks
+
+  Decision: NONE of the interactions outperform original features.
+  Original features already capture relationships effectively.
+  Interaction features NOT added to Experiment 1 or Experiment 2.
+  Finding: no interaction engineering needed for this dataset.
+  Plot saved: interaction_features.png
+
 ---
 
 ### Experiment 2
