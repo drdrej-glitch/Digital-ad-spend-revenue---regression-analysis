@@ -278,15 +278,41 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
 ---
 
 ### Experiment 2
-- **Date:**
-- **Tag:**
-- **Dataset:**
-- **Algorithm:**
-- **Target variable:**
-- **Features used:**
-- **Parameters:**
-- **Metrics:** R²: · RMSE: · MAE:
-- **Notes:**
+- **Date:** April 2026
+- **Tag:** `regularized`
+- **Dataset:** global_ads_performance_dataset.csv (1,800 rows · 22 features after encoding)
+- **Algorithm:** Ridge Regression (sklearn) with RidgeCV alpha selection
+- **Target variable:** log(revenue + 1) — log-transformed campaign revenue (USD)
+- **Features used:** All 22 features from Experiment 1 (scaled, month dropped)
+  impressions, clicks, CTR, CPC, ad_spend, conversions, quarter +
+  15 dummy encoded categoricals (platform, campaign_type, industry, country)
+- **Parameters:** alpha=1.0 (selected via 5-fold RidgeCV from range [0.001–1000])
+- **Metrics:** R²: 0.5978 (test log) · RMSE: $37,656 (raw) · MAE: 0.6266 (log)
+- **Notes:** Ridge marginally outperforms OLS on test R² (0.5978 vs 0.5972)
+  and train-test gap (0.0406 vs 0.0412). RMSE slightly worse by $108 — negligible.
+  Best alpha=1.0 confirms minimal regularisation needed — model was not overfitting.
+  Coefficient shrinkage minimal across all features (max 0.015 on clicks).
+  clicks coefficient is still negative (-0.688) after Ridge — confirms suppression
+  effect from conversions competition rather than pure multicollinearity artifact.
+  OLS remains the preferred model for interpretability, given near-identical performance.
+  Ridge retained as a robustness check confirming OLS stability.
+
+  Extended alpha search found alpha=50 as peak test R² (0.6043).
+  Gap reduced from 0.041 to 0.026 — better generalization.
+  Trade-off: RMSE increases $37,548 → $40,584 (+$3,036).
+  Decision: OLS retained as primary model for interpretability
+  and lower RMSE. Ridge α=50 documented as a robustness check.
+
+  Assumption diagnostics complete on test set (360 rows).
+  PASS: Linearity (corr=-0.039), Independence (DW=2.027),
+      Normality (Shapiro p=0.169)
+  FAIL: Homoskedasticity (BP p=0.001) — main limitation
+      Multicollinearity (clicks VIF=15.38) — Ridge mitigates
+  Influential points: 63 (4.4%) — acceptable, retained
+  Primary limitation: heteroskedasticity — standard errors
+  underestimated, p-values less reliable for high-revenue campaigns.
+
+  
 
 ---
 
@@ -307,8 +333,8 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
 
 | # | Date | Algorithm | Key Features | R² | RMSE | Tag |
 |---|---|---|---|---|---|---|
-| 1 | Mar 2026 | OLS | All features | — | — | baseline |
-| 2 | | | | | | |
+| 1 | Mar 2026 | OLS | All features | 0.5972 | $37,548 | baseline |
+| 2 | Apr 2026 | Ridge (alpha=1.0) | All 22 features | 0.5978 | $37,656 | regularized |
 | 3 | | | | | | |
 ```
 
