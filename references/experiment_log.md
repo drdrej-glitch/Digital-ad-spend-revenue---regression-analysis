@@ -318,6 +318,21 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
   OLS retained as primary for interpretability.
   Ridge α=50 documented as a robustness check.
 
+  Results useful for directional decisions — not precise forecasting
+  Ridge α=50 — Test R² 0.597→0.604, gap 0.041→0.026, RMSE +$3,036
+  Alpha=50 confirmed optimal — trend plateaus then reverses at α=100
+  Assumptions — 3 PASS (linearity, independence, normality)
+                       2 FAIL (heteroskedasticity, multicollinearity)
+  Cook's D: 63 influential points (4.4%) — retained as legitimate
+  Before vs after — test R² +0.007, gap -37%, RMSE +8.1%
+  Primary finding confirmed — ad spend not significant (p=0.342)
+  Fairness risks: geographic bias (Australia baseline) and
+  platform bias (37% more Google data than TikTok)
+  Model card documented — recommended for platform comparison only
+
+  Final model: OLS (primary) + Ridge α=50 (robustness check)
+  Training R²=0.638 | Test R²=0.597 | RMSE=$37,548
+
 ---
 
 ### Experiment 3
