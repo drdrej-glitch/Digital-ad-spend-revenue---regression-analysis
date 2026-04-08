@@ -312,7 +312,11 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
   Primary limitation: heteroskedasticity — standard errors
   underestimated, p-values less reliable for high-revenue campaigns.
 
-  
+  Before vs after complete. Key improvements:
+  Test R²: +0.007, Train-test gap: -37% (0.041→0.026)
+  Trade-off accepted: RMSE +$3,036 for better generalization.
+  OLS retained as primary for interpretability.
+  Ridge α=50 documented as a robustness check.
 
 ---
 
@@ -334,7 +338,7 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
 | # | Date | Algorithm | Key Features | R² | RMSE | Tag |
 |---|---|---|---|---|---|---|
 | 1 | Mar 2026 | OLS | All features | 0.5972 | $37,548 | baseline |
-| 2 | Apr 2026 | Ridge (alpha=1.0) | All 22 features | 0.5978 | $37,656 | regularized |
+| 2 | Apr 2026 | Ridge α=50 (final) | All 22 features | 0.6043 | $40,584 | regularized |
 | 3 | | | | | | |
 ```
 
