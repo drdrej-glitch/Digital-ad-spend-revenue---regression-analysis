@@ -8,7 +8,8 @@ Tag each run: `baseline` · `tuned` · `promising` · `fail`
 
 ## Log
 
-### Experiment 1
+### Experiment 1method
+
 - **Date:** March 2026
 - **Tag:** `baseline`
 - **Dataset:** global_ads_performance_dataset.csv (1,800 rows · 16 columns after feature extraction)
